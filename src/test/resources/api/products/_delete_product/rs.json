@@ -1,0 +1,15 @@
+{
+  "id": "regex:[\\d]",
+  "title": "type:String",
+  "description": "type:String",
+  "price": "type:Integer",
+  "discountPercentage": "type:Double",
+  "rating": "type:Double",
+  "stock": "type:Integer",
+  "brand": "type:String",
+  "category": "type:String",
+  "thumbnail": "regex:https:\\/\\/cdn.dummyjson.com\\/product-images.*?thumbnail\\.jpg",
+  "images": "skip",
+  "isDeleted": true,
+  "deletedOn": "type:String"
+}

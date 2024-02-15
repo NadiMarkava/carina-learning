@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": "regex:[\\d]",
+      "title": "type:String",
+      "description": "type:String",
+      "price": "type:Integer",
+      "discountPercentage": "type:Double",
+      "rating": "type:Double",
+      "stock": "type:Integer",
+      "brand": "type:String",
+      "category": "type:String",
+      "thumbnail": "regex:https:\\/\\/cdn.dummyjson.com\\/product-images.*?thumbnail\\.jpg",
+      "images": "skip"
+    },
+    {
+      "id": "regex:[\\d]",
+      "title": "type:String",
+      "description": "type:String",
+      "price": "type:Integer",
+      "discountPercentage": "type:Double",
+      "rating": "type:Double",
+      "stock": "type:Integer",
+      "brand": "type:String",
+      "category": "type:String",
+      "thumbnail": "regex:https:\\/\\/cdn.dummyjson.com\\/product-images.*?thumbnail\\.jpg",
+      "images": "skip"
+    },
+    {
+      "id": "regex:[\\d]",
+      "title": "type:String",
+      "description": "type:String",
+      "price": "type:Integer",
+      "discountPercentage": "type:Double",
+      "rating": "type:Double",
+      "stock": "type:Integer",
+      "brand": "type:String",
+      "category": "type:String",
+      "thumbnail": "regex:https:\\/\\/cdn.dummyjson.com\\/product-images.*?thumbnail\\.jpeg",
+      "images": "skip"
+    }
+  ],
+  "total": 3,
+  "skip": 0,
+  "limit": 3
+}

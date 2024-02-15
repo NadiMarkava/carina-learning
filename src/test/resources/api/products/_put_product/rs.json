@@ -1,0 +1,12 @@
+{
+  "id": "regex:[\\d]",
+  <#if title??>"title": "${title}",</#if>
+  <#if price??>"price": ${price},</#if>
+  "stock": "type:Integer",
+  "rating": "type:Double",
+  "images": "skip",
+  "thumbnail": "regex:https:\\/\\/cdn.dummyjson.com\\/product-images.*?thumbnail\\.jpg",
+  <#if description??>"description": "${description}",</#if>
+  <#if brand??>"brand": "${brand}",</#if>
+  <#if category??>"category": "${category}",</#if>
+}
