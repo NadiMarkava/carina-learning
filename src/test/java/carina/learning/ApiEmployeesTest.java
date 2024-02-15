@@ -8,45 +8,45 @@ public class ApiEmployeesTest {
 
     @Test()
     @MethodOwner(owner = "nknysh")
-    public void testCreateUser() {
-        PostUserMethod api = new PostUserMethod();
-        api.setProperties("api/users/user.properties");
-        api.callAPIExpectSuccess();
-        api.validateResponse();
+    public void testCreateEmployee() {
+        PostEmployeeMethod postEmployeeMethod = new PostEmployeeMethod();
+        postEmployeeMethod.setProperties("api/users/user.properties");
+        postEmployeeMethod.callAPIExpectSuccess();
+        postEmployeeMethod.validateResponse();
     }
 
     @Test()
     @MethodOwner(owner = "nknysh")
-    public void testUpdateUser() {
-        PutUserMethod api = new PutUserMethod(24);
-        api.setProperties("api/users/user.properties");
-        api.callAPIExpectSuccess();
-        api.validateResponse();
+    public void testUpdateEmployee() {
+        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod(24);
+        putEmployeeMethod.setProperties("api/users/user.properties");
+        putEmployeeMethod.callAPIExpectSuccess();
+        putEmployeeMethod.validateResponse();
     }
 
     @Test()
     @MethodOwner(owner = "nknysh")
     public void testGetUsers() {
-        GetAllUsersMethod getUsersMethods = new GetAllUsersMethod();
-        getUsersMethods.callAPIExpectSuccess();
-        getUsersMethods.validateResponse();
-        getUsersMethods.validateResponseAgainstSchema("api/users/_get_all/rs.schema");
+        GetAllEmployeesMethod getEmployeesMethods = new GetAllEmployeesMethod();
+        getEmployeesMethods.callAPIExpectSuccess();
+        getEmployeesMethods.validateResponse();
+        getEmployeesMethods.validateResponseAgainstSchema("api/users/_get_all/rs.schema");
     }
 
     @Test()
     @MethodOwner(owner = "nknysh")
-    public void testGetUser() {
-        GetUserByIdMethod getUsersMethod = new GetUserByIdMethod(23);
-        getUsersMethod.callAPIExpectSuccess();
-        getUsersMethod.validateResponse();
-        getUsersMethod.validateResponseAgainstSchema("api/users/_get_by_id/rs.schema");
+    public void testGetEmployee() {
+        GetEmployeeByIdMethod getEmployeeMethod = new GetEmployeeByIdMethod(23);
+        getEmployeeMethod.callAPIExpectSuccess();
+        getEmployeeMethod.validateResponse();
+        getEmployeeMethod.validateResponseAgainstSchema("api/users/_get_by_id/rs.schema");
     }
 
     @Test()
     @MethodOwner(owner = "nknysh")
-    public void testDeleteUsers() {
-        DeleteUserMethod deleteUserMethod = new DeleteUserMethod(24);
-        deleteUserMethod.callAPIExpectSuccess();
-        deleteUserMethod.validateResponse();
+    public void testDeleteEmployee() {
+        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod(24);
+        deleteEmployeeMethod.callAPIExpectSuccess();
+        deleteEmployeeMethod.validateResponse();
     }
 }
