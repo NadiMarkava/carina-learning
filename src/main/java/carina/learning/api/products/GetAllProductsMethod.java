@@ -14,6 +14,6 @@ import com.zebrunner.carina.utils.config.Configuration;
 public class GetAllProductsMethod extends AbstractApiMethodV2 {
 
     public GetAllProductsMethod() {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_products"));
+        replaceUrlPlaceholder("base_url", Configuration.getRequired("dummyjson_api_url"));
     }
 }

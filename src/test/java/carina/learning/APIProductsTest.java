@@ -102,11 +102,11 @@ public class APIProductsTest implements IAbstractTest {
     @MethodOwner(owner = "nknysh")
     public void testGetProductsWithAuthToken() {
         PostLoginUserMethod login = new PostLoginUserMethod();
+        login.setProperties("api/products/product.properties");
         Response rs = login.callAPI();
-        String actualRsBody = rs.asString();
-        String token = JsonPath.from(actualRsBody).getString("token");
+        String token = JsonPath.from(rs.asString()).getString("token");
         login.callAPIExpectSuccess();
-        GetTokenInBearerMethod provide = new GetTokenInBearerMethod(token);
+        GetCurrentAuthUserDataMethod provide = new GetCurrentAuthUserDataMethod(token);
         provide.callAPIExpectSuccess();
         GetProductsWithAuthTokenMethod get= new GetProductsWithAuthTokenMethod(token);
         get.callAPIExpectSuccess();

@@ -17,7 +17,7 @@ import com.zebrunner.carina.utils.config.Configuration;
 public class PutProductMethod extends AbstractApiMethodV2 {
 
     public PutProductMethod(int id) {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_products"));
+        replaceUrlPlaceholder("base_url", Configuration.getRequired("dummyjson_api_url"));
         replaceUrlPlaceholder("id", String.valueOf(id));
     }
 }

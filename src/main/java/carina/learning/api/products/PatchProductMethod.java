@@ -17,7 +17,7 @@ import com.zebrunner.carina.utils.config.Configuration;
 public class PatchProductMethod extends AbstractApiMethodV2 {
 
     public PatchProductMethod(int id) {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_products"));
+        replaceUrlPlaceholder("base_url", Configuration.getRequired("dummyjson_api_url"));
         replaceUrlPlaceholder("id", String.valueOf(id));
         ignorePropertiesProcessor(NotStringValuesProcessor.class);
     }

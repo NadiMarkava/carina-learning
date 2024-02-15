@@ -2,19 +2,20 @@ package carina.learning.api.products;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
-import com.zebrunner.carina.api.annotation.ResponseTemplatePath;
 import com.zebrunner.carina.api.annotation.SuccessfulHttpStatus;
 import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
+import org.apache.http.HttpHeaders;
 
-@Endpoint(url = "${base_url}/products/${id}", methodType = HttpMethodType.DELETE)
-@ResponseTemplatePath(path = "api/products/_delete_product/rs.json")
+@Endpoint(url = "${base_url}/auth/me", methodType = HttpMethodType.GET)
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class DeleteProductMethod extends AbstractApiMethodV2 {
+public class GetCurrentAuthUserDataMethod extends AbstractApiMethodV2 {
 
-    public DeleteProductMethod(int id) {
+    public GetCurrentAuthUserDataMethod(String token) {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("dummyjson_api_url"));
-        replaceUrlPlaceholder("id", String.valueOf(id));
+        setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
     }
+
 }
+

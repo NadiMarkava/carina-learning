@@ -15,7 +15,7 @@ import org.apache.http.HttpHeaders;
 public class GetProductsWithAuthTokenMethod extends AbstractApiMethodV2 {
 
     public GetProductsWithAuthTokenMethod(String token) {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_products"));
+        replaceUrlPlaceholder("base_url", Configuration.getRequired("dummyjson_api_url"));
         setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
     }
 }

@@ -1,3 +1,4 @@
-{"username": "rshawe2",
-  "password": "OWsTbMUgFc"
+{
+  <#if username??>"username": "${username}",</#if>
+  <#if password??>"password": "${password}"</#if>
 }

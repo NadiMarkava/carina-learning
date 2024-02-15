@@ -1,4 +1,4 @@
-package carina.learning.api.products;
+package carina.learning.api.employees;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
@@ -9,14 +9,14 @@ import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
-@Endpoint(url = "${base_url}/products/add", methodType = HttpMethodType.POST)
-@RequestTemplatePath(path = "api/products/_post_product/rq.json")
-@ResponseTemplatePath(path = "api/products/_post_product/rs.json")
+@Endpoint(url = "${base_url}/create", methodType = HttpMethodType.POST)
+@RequestTemplatePath(path = "api/users/_post/rq.json")
+@ResponseTemplatePath(path = "api/users/_post/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class PostProductMethod extends AbstractApiMethodV2 {
+public class PostEmployeeMethod extends AbstractApiMethodV2 {
 
-    public PostProductMethod() {
+    public PostEmployeeMethod() {
         super();
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("dummyjson_api_url"));
+        replaceUrlPlaceholder("base_url", Configuration.getRequired("restapiexample_api_url"));
     }
 }
