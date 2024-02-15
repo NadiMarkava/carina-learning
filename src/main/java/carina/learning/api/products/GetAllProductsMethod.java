@@ -11,9 +11,9 @@ import com.zebrunner.carina.utils.config.Configuration;
 @Endpoint(url = "${base_url}/products", methodType = HttpMethodType.GET)
 @ResponseTemplatePath(path = "api/products/_get_products/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class GetAllProductsMethod extends AbstractApiMethodV2 {
+public class GetAllProductsMethod extends AbstractDummyJsonMethod {
 
     public GetAllProductsMethod() {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("dummyjson_api_url"));
+        super();
     }
 }

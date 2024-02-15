@@ -12,10 +12,10 @@ import org.apache.http.HttpHeaders;
 @Endpoint(url = "${base_url}/auth/me", methodType = HttpMethodType.GET)
 @ResponseTemplatePath(path = "api/products/_get_auth_user_data/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class GetCurrentAuthUserDataMethod extends AbstractApiMethodV2 {
+public class GetCurrentAuthUserDataMethod extends AbstractDummyJsonMethod {
 
     public GetCurrentAuthUserDataMethod(String token) {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("dummyjson_api_url"));
+        super();
         setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
     }
 
