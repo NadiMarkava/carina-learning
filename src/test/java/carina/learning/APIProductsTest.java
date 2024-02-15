@@ -100,14 +100,34 @@ public class APIProductsTest implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "nknysh")
+    public void testPostLoginMethod() {
+        PostLoginUserMethod login = new PostLoginUserMethod();
+        login.setProperties("api/products/product.properties");
+        login.callAPIExpectSuccess();
+        login.validateResponse();
+    }
+
+    @Test()
+    @MethodOwner(owner = "nknysh")
+    public void testGetTokenInBearerMethod() {
+        PostLoginUserMethod login = new PostLoginUserMethod();
+        login.setProperties("api/products/product.properties");
+        Response rs = login.callAPI();
+        String token = JsonPath.from(rs.asString()).getString("token");
+        GetCurrentAuthUserDataMethod getAuthData = new GetCurrentAuthUserDataMethod(token);
+        getAuthData.setProperties("api/products/product.properties");
+        getAuthData.callAPIExpectSuccess();
+        getAuthData.validateResponse();
+    }
+
+    @Test()
+    @MethodOwner(owner = "nknysh")
     public void testGetProductsWithAuthToken() {
         PostLoginUserMethod login = new PostLoginUserMethod();
         login.setProperties("api/products/product.properties");
         Response rs = login.callAPI();
         String token = JsonPath.from(rs.asString()).getString("token");
         login.callAPIExpectSuccess();
-        GetCurrentAuthUserDataMethod provide = new GetCurrentAuthUserDataMethod(token);
-        provide.callAPIExpectSuccess();
         GetProductsWithAuthTokenMethod get= new GetProductsWithAuthTokenMethod(token);
         get.callAPIExpectSuccess();
         get.validateResponse();

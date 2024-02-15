@@ -1,0 +1,10 @@
+{
+  "id": 3,
+  <#if username??>"username": "${username}",</#if>
+  "email": "rshawe2@51.la",
+  "firstName": "Terrill",
+  "lastName": "Hills",
+  "gender": "male",
+  "image": "https://robohash.org/Terrill.png?set=set4",
+  "token": "type:String"
+}
